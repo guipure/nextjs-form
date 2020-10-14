@@ -73,7 +73,8 @@ const useStyles = makeStyles({
 function InfoCard({ editMode }) {
   const classes = useStyles();
 
-  let initialData = process.browser ? JSON.parse(localStorage.getItem('data')) : {
+  const localData = process.browser ? JSON.parse(localStorage.getItem('data')) : null;
+  const initialData = localData || {
     name: '',
     email: '',
     phone: '',
